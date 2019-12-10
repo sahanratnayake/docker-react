@@ -1,0 +1,20 @@
+version: '3'
+services: 
+  web:
+    build:
+      context: .  #folder to look
+      dockerfile: Dockerfile.dev
+    ports: 
+      - "3000:3000"
+    volumes: 
+      - /app/node_modules
+      - .:/app
+  # Container solely made for testing
+  tests:
+    build:
+      context: .  #folder to look
+      dockerfile: Dockerfile.dev
+    volumes: 
+      - /app/node_modules
+      - .:/app
+    command: ["npm","run","test"]
