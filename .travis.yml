@@ -1,0 +1,9 @@
+sudo: required
+services:
+  - docker
+before_install:
+  - docker build -t sahanratnayake/docker-react -f Dockerfie.dev .
+
+# commands to be executed at running of test
+script:
+  - docker run sahanratnayake/docker-react npm run test -- --coverage

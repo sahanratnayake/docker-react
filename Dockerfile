@@ -10,5 +10,3 @@ RUN npm run build
 FROM nginx
 # Use 1st phase contruction
 COPY --from=builder /app/build /usr/share/nginx/html
-
-
