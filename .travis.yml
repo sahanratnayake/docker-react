@@ -1,8 +1,9 @@
 sudo: required
 services:
   - docker
+
 before_install:
-  - docker build -t sahanratnayake/docker-react -f Dockerfie.dev .
+  - docker build -t sahanratnayake/docker-react -f Dockerfile.dev .
 
 # commands to be executed at running of test
 script:
